@@ -1,6 +1,6 @@
 FROM codercom/code-server:latest
 # Misc
-RUN sudo apt-get update && sudo apt-get install --no-install-recommends -y \
+RUN sudo apt-get clean && sudo apt-get update && sudo apt-get install --no-install-recommends -y \
     jq \
     gnupg2 \
     curl \
