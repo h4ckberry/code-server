@@ -1,6 +1,6 @@
 FROM codercom/code-server:latest
 # Misc
-RUN sudo apt-get clean && sudo apt-get update && sudo apt-get install --no-install-recommends -y \
+RUN sudo apt-get update && sudo apt-get install --no-install-recommends -y \
     jq \
     gnupg2 \
     curl \
@@ -9,7 +9,6 @@ RUN sudo apt-get clean && sudo apt-get update && sudo apt-get install --no-insta
     wget \
     bash-completion \
     dnsutils \
-    netcat \
     telnet \
     postgresql-client \
     && sudo rm -rf /var/lib/apt/lists/*
