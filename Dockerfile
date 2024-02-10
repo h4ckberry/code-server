@@ -30,7 +30,7 @@ RUN wget -q -O terraform.zip https://releases.hashicorp.com/terraform/${TERRAFOR
     rm -f terraform*
 
 # Docker
-ENV DOCKER_VERSION 20.10.21
+ENV DOCKER_VERSION 25.0.3
 RUN wget -q -O docker.tar.gz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz && \
     tar xzf docker.tar.gz && \
     sudo install docker/docker /usr/local/bin/ && \
