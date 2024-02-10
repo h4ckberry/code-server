@@ -32,15 +32,15 @@ RUN wget -q -O terraform.zip https://releases.hashicorp.com/terraform/${TERRAFOR
 # Docker
 ENV DOCKER_VERSION 20.10.21
 RUN wget -q -O docker.tar.gz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz && \
-   tar xzf docker.tar.gz && \
-   sudo install docker/docker /usr/local/bin/ && \
-   rm -rf docker*
+    tar xzf docker.tar.gz && \
+    sudo install docker/docker /usr/local/bin/ && \
+    rm -rf docker*
 
 # Kubectl
 ENV KUBECTL_VERSION 1.23.13
 RUN wget -q -O kubectl "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" && \
-   sudo install kubectl /usr/local/bin/ && \
-   rm -f kubectl*
+    sudo install kubectl /usr/local/bin/ && \
+    rm -f kubectl*
 
 # HELM
 ENV HELM_VERSION 3.10.1
@@ -64,10 +64,3 @@ RUN wget -q https://github.com/stern/stern/releases/download/v${STERN_VERSION}/s
     sudo install stern /usr/local/bin/ && \
     rm -rf stern*
 RUN rm -f LICENSE README.md
-
-
-# Visual Studio Code Extentions
-RUN code-server --install-extension dracula-theme.theme-dracula
-RUN code-server --install-extension MS-CEINTL.vscode-language-pack-ja
-RUN code-server --install-extension vscode-icons-team.vscode-icons
-RUN code-server --install-extension eamodio.gitlens

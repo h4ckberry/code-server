@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: code-server
+  labels:
+    app: code-server
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8443
+      protocol: TCP
+      targetPort: 8443
+  selector:
+    app: code-server
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: code-server
+  labels:
+    app: code-server
+spec:
+  containers:
+    - name: code-server
+      image: okteto.dev/code-server:latest
+      ports:
+        - containerPort: 8443
+      envFrom:
+        - secretRef:
+            name: code-server-secret
