@@ -64,3 +64,10 @@ RUN wget -q https://github.com/stern/stern/releases/download/v${STERN_VERSION}/s
     sudo install stern /usr/local/bin/ && \
     rm -rf stern*
 RUN rm -f LICENSE README.md
+
+
+# Visual Studio Code Extentions
+RUN code-server --install-extension dracula-theme.theme-dracula
+RUN code-server --install-extension MS-CEINTL.vscode-language-pack-ja
+RUN code-server --install-extension vscode-icons-team.vscode-icons
+RUN code-server --install-extension eamodio.gitlens
